@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hành trình 100 năm Chủ nghĩa Xã hội</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TimelineJS core -->
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <!--=================== Main Segment ============-->
+    <header>
+        <h1>Từ Cách Mạng Tháng Mười Đến Hiện Đại: 100 Năm Chủ Nghĩa Xã Hội</h1>
+        <div class="top-right-buttons">
+            <button id="sus-btn" class="info-btn">ඞ</button>
+            <button id="help-btn" class="info-btn">?</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="timeline-embed"></div>
+    </main>
+
+    <footer>
+        Dữ liệu và trình bày: <strong>G8 SE1802-KS</strong> · Powered by
+        <a href="https://timeline.knightlab.com/" target="_blank">Knight Lab TimelineJS</a>
+    </footer>
+
+
+    <!--=================== Modal Segment ============-->
+
+    <div id="intro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Hành Trình 100 Năm Chủ Nghĩa Cộng Sản</h2>
+            <p>
+                Từ những tiếng súng vang lên tại <strong>Petrograd năm 1917</strong>, một làn sóng cách mạng đã lan tỏa
+                khắp thế giới,
+                làm thay đổi cục diện chính trị – xã hội của cả thế kỷ XX. <strong>Chủ nghĩa cộng sản</strong> không chỉ
+                là một học thuyết,
+                mà còn là niềm tin, khát vọng, và lý tưởng về một xã hội công bằng, nơi con người được giải phóng khỏi
+                áp bức và bất công.
+            </p>
+            <p>
+                Trải qua hơn một thế kỷ, từ <strong>Cách mạng Tháng Mười Nga</strong> đến những biến động của thời kỳ
+                hậu Chiến tranh Lạnh,
+                phong trào cộng sản đã đi qua nhiều giai đoạn thăng trầm — từ những năm tháng xây dựng và mở rộng, đến
+                thời kỳ tự đổi mới,
+                thích nghi với thực tế toàn cầu hóa. Mỗi giai đoạn là một chương đầy biến động trong lịch sử nhân loại.
+            </p>
+            <p>
+                Trang web này được xây dựng nhằm <strong>tái hiện hành trình 100 năm ấy</strong> thông qua một
+                <strong>dòng thời gian tương tác</strong>, giúp người xem dễ dàng khám phá các giai đoạn, nhân vật, và
+                sự kiện
+                tiêu biểu đã định hình nên tiến trình phát triển của chủ nghĩa cộng sản trên thế giới và tại Việt Nam.
+            </p>
+            <p>
+                Hơn cả một tư liệu lịch sử, đây là lời mời gọi bạn đọc <strong>cảm nhận, suy ngẫm, và nhìn lại</strong>
+                — không chỉ quá khứ,
+                mà cả những giá trị, bài học và tầm ảnh hưởng mà chủ nghĩa cộng sản vẫn để lại trong thế giới hiện đại
+                hôm nay.
+            </p>
+            <p style="text-align: right; font-style: italic; color: #8C3C1E;">
+                — Nhóm 8 SE1802-KS
+            </p>
+        </div>
+    </div>
+
+    <div id="sus-modal" class="sus-modal">
+        <div class="sus-modal-content">
+            <span class="sus-close">&times;</span>
+            <img src="images/5c2iym.webp" alt="Sus Scene" />
+        </div>
+    </div>
+
+
+
+    <script>
+        // === Initialize TimelineJS ===
+        var timeline = new TL.Timeline(
+            'timeline-embed',
+            'https://docs.google.com/spreadsheets/d/e/2PACX-1vRYaARTwQti0dRw6SbTRwJOptZ_5FgKedppDSiI9Q3fFg2JMcWq6Az5dT-tw7GfMlDoKzLEZQl-BBkN/pubhtml?gid=0&single=true',
+            {
+                language: 'vi',
+                initial_zoom: 2,
+                timenav_position: 'bottom',
+                height: '100%',
+                width: '100%',
+                hash_bookmark: true
+            }
+        );
+
+        // === Info Modal Logic ===
+        const modal = document.getElementById('intro-modal');
+        const btn = document.getElementById('help-btn');
+        const close = document.querySelector('.close');
+
+        btn.onclick = () => modal.style.display = 'block';
+        close.onclick = () => modal.style.display = 'none';
+        window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+        const susBtn = document.getElementById("sus-btn");
+        const susModal = document.getElementById("sus-modal");
+        const susClose = document.querySelector(".sus-close");
+
+        susBtn.addEventListener("click", () => {
+            susModal.style.display = "flex";
+        });
+
+        susClose.addEventListener("click", () => {
+            susModal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === susModal) {
+                susModal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lora', serif;
+    background: #FAF3E0;
+    /* aged paper */
+    color: #2C1B18;
+    /* old ink tone */
+}
+
+/* === HEADER === */
+header {
+    background: linear-gradient(135deg, #A41E11, #8C3C1E);
+    /* deep red gradient */
+    color: #FAF3E0;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+    border-bottom: 4px solid #D4AF37;
+}
+
+header p {
+    font-weight: normal;
+    max-width: 800px;
+    margin: 0.5rem auto 0;
+    line-height: 1.5;
+    color: #FAEBD7;
+}
+
+/* === MAIN AREA === */
+main {
+    flex: 1;
+    position: relative;
+}
+
+/* === FOOTER === */
+footer {
+    background: #8C3C1E;
+    color: #FAF3E0;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    border-top: 3px solid #D4AF37;
+}
+
+footer a {
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* === TIMELINE CONTAINER === */
+#timeline-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* === TIMELINE OVERRIDES === */
+.tl-timeline {
+    background-color: #FAF3E0 !important;
+    color: #2C1B18 !important;
+}
+
+.tl-slide-title,
+.tl-text,
+.tl-text p {
+    color: #2C1B18 !important;
+}
+
+/* Timeline navigation */
+.tl-timenav {
+    background-color: #A41E11 !important;
+    border-top: 2px solid #8C3C1E !important;
+}
+
+.tl-timenav-background,
+.tl-timenav-zoom {
+    background-color: #D4AF37 !important;
+    border-top: 2px solid #A41E11 !important;
+}
+
+/* Media box */
+.tl-media-content {
+    background-color: #FAF3E0 !important;
+    border: 1px solid #D4AF37 !important;
+}
+
+/* Navigation buttons */
+.tl-slidenav-next,
+.tl-slidenav-previous {
+    color: #FAF3E0 !important;
+    border-radius: 8px !important;
+    transition: all 0.25s ease;
+}
+
+.tl-slidenav-next:hover,
+.tl-slidenav-previous:hover {
+    color: #FFF !important;
+}
+
+/* === Info Button === */
+.top-right-buttons {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    /* space between buttons */
+    z-index: 1000;
+    /* make sure it's above everything */
+}
+
+/* Shared button styling */
+.info-btn {
+    font-size: 20px;
+    background-color: #8C3C1E;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.info-btn:hover {
+    background-color: #a94e2c;
+    transform: scale(1.1);
+}
+
+#help-btn {
+    background-color: #D4AF37;
+}
+
+/* Unique color for the ඞ button */
+#sus-btn {
+    background-color: #b30000;
+}
+
+#sus-btn:hover {
+    background-color: #d31b1b;
+}
+
+.top-right-buttons {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    /* space between buttons */
+    z-index: 1000;
+    /* make sure it's above everything */
+}
+
+/* Shared button styling */
+.info-btn {
+    font-size: 20px;
+    background-color: #8C3C1E;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.info-btn:hover {
+    background-color: #a94e2c;
+    transform: scale(1.1);
+}
+
+/* Unique color for the ඞ button */
+#sus-btn {
+    background-color: #b30000;
+}
+
+#sus-btn:hover {
+    background-color: #d31b1b;
+}
+
+/* === Modal Popup === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 27, 24, 0.7);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-content {
+    background: #FAF3E0;
+    color: #2C1B18;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 2px solid #D4AF37;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.3s ease forwards;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #A41E11;
+    text-align: center;
+}
+
+.modal-content p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #A41E11;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #8C3C1E;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sus-btn {
+    right: 65px;
+    background-color: #b30000;
+}
+
+.sus-btn:hover {
+    background-color: #d31b1b;
+}
+
+.sus-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+}
+
+/* Modal content (the image) */
+.sus-modal-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.sus-modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    animation: popIn 0.4s ease-out;
+}
+
+/* Close button */
+.sus-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 0 10px;
+    transition: 0.2s;
+}
+
+.sus-close:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
